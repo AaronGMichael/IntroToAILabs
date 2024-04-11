@@ -10,7 +10,7 @@ class Node:
     def add_vertex(self, cost, node):
         x = Vertex(cost, node)
         self.vertexes.append(x)
-        node.vertexes.append(x)
+        node.vertexes.append(Vertex(cost, self))
 
     def show_data(self):
         print(self.name)

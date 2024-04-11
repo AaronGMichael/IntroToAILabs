@@ -47,6 +47,7 @@ class Graph:
                 continue
             path.append(node.name)
             closed.add(node)
+            print('Removing: ', end='')
             node.show_data()
             if node == searchItem:
                 return {"node": node, "cost": cost, "path": path}
