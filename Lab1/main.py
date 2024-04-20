@@ -27,9 +27,37 @@ if __name__ == '__main__':
     g = ret["graph"]
     search = ret["goal"]
     found = g.a_star_search(search)
+    print(found)
     if not found:
         print("No Solution found")
     else:
         print("Goal State found with cost: ",
               found["cost"], "and data: ", found["node"].name,
-              "The Nodes Expanded are: ", found["path"])
+              "The Solution Path is: ", found["path"])
+    print("\n\nDFS")
+    found = g.doDFS(search)
+    print(found)
+    if not found:
+        print("No Solution found")
+    else:
+        print("Goal State found with cost: ",
+              found["cost"], "and data: ", found["node"].name,
+              "The Solution Path is: ", found["path"])
+    print("\n\nBFS without Priority Queue")
+    found = g.doBFS(search)
+    print(found)
+    if not found:
+        print("No Solution found")
+    else:
+        print("Goal State found with cost: ",
+              found["cost"], "and data: ", found["node"].name,
+              "The Solution Path is: ", found["path"])
+    print("\n\nBFS with Priority Queue")
+    found = g.doUCS(search)
+    print(found)
+    if not found:
+        print("No Solution found")
+    else:
+        print("Goal State found with cost: ",
+              found["cost"], "and data: ", found["node"].name,
+              "The Solution Path is: ", found["path"])
